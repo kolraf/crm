@@ -12,17 +12,14 @@
     <div class="securityPage">
         <div class="securityFormPosition">
             <div class="securityForm">
-                <form action="{{ path('login') }}" method="post">
-                    <label for="username">Email:</label>
-                    <input type="text" id="username" name="_username" value="{{ last_username }}" />
-
-                    <label for="password">Hasło:</label>
-                    <input type="password" id="password" name="_password" />
+                {{ form_start(form) }}
+                    {{ form_row(form._username) }}
+                    {{ form_row(form._password) }}
 
                     <div class="buttonCenter">
                         <button type="submit">Zaloguj</button>
                     </div>
-                </form>
+                {{ form_end(form) }}
             </div>
         </div>
     </div>

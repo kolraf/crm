@@ -9,16 +9,16 @@
     <div class="securityPage">
         <div class="securityFormPosition">
             <div class="securityForm">
-            {{ form_start(form) }}
-                {{ form_row(form.username) }}
-                {{ form_row(form.email) }}
-                {{ form_row(form.plainPassword.first) }}
-                {{ form_row(form.plainPassword.second) }}
+                {{ form_start(form) }}
+                    {{ form_row(form.username) }}
+                    {{ form_row(form.email) }}
+                    {{ form_row(form.plainPassword.first) }}
+                    {{ form_row(form.plainPassword.second) }}
 
-            <div class="buttonCenter">
-                <button type="submit">Zarejestruj</button>
-            </div>
-            {{ form_end(form) }}
+                    <div class="buttonCenter">
+                        <button type="submit">Zarejestruj</button>
+                    </div>
+                {{ form_end(form) }}
             </div>
         </div>
     </div>

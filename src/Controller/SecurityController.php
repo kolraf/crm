@@ -10,7 +10,7 @@ use App\Form\UserRegister;
 use App\Form\UserLogin;
 use App\Entity\User;
 
-class SecurityController extends Controller{
+class SecurityController extends Controller {
 
     public function registerAction(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {

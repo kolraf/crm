@@ -2,12 +2,17 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use App\Form\MealTypeForm;
 use App\Entity\MealType;
 
-class MealController extends Controller {
+class MealController extends BaseController {
+
+    public function setContainer(ContainerInterface $container = null)
+    {
+        parent::setContainer($container);
+    }
 
     public function addMealTypeAction(Request $request){
         $mealType = new MealType();
@@ -16,9 +21,8 @@ class MealController extends Controller {
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($mealType);
-            $em->flush();
+            $this->em->persist($mealType);
+            $this->em->flush();
         }
 
         return $this->render(

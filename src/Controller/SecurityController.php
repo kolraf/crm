@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
@@ -10,7 +10,12 @@ use App\Form\UserRegister;
 use App\Form\UserLogin;
 use App\Entity\User;
 
-class SecurityController extends Controller{
+class SecurityController extends BaseController {
+
+    public function setContainer(ContainerInterface $container = null)
+    {
+        parent::setContainer($container);
+    }
 
     public function registerAction(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {

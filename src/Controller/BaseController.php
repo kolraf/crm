@@ -2,17 +2,16 @@
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-class HomeController extends BaseController {
+class BaseController extends Controller {
+
+    protected $em;
 
     public function setContainer(ContainerInterface $container = null)
     {
         parent::setContainer($container);
-    }
-
-    public function indexAction()
-    {
-        return $this->render('home/index.html.twig', []);
+        $this->em = $this->getDoctrine()->getManager();
     }
 }

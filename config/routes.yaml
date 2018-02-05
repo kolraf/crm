@@ -2,6 +2,8 @@ index:
     path: /
     controller: App\Controller\HomeController::indexAction
 
+# LOGOWANIE
+
 login:
     path:       /login
     controller: App\Controller\SecurityController::loginAction
@@ -12,3 +14,9 @@ register:
 
 logout:
     path:       /logout
+
+# POSIŁKI
+
+mealType:
+    path:       /meal/add-meal-type
+    controller: App\Controller\MealController::addMealTypeAction
